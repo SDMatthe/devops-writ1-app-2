@@ -7,7 +7,7 @@ pipeline {
   }
 
   environment {
-    DOCKERHUB_IMAGE = "bassam2080/collegecarpark"
+    DOCKERHUB_IMAGE = "hiltonm420/collegecarpark"
   }
 
   stages {
