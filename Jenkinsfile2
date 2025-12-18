@@ -81,7 +81,13 @@ pipeline {
     stage('Deploy') {
           steps {
             sh '''
+              # Remove running containers
               docker compose down || true
+
+              # Optionally remove dangling images and volumes
+              docker system prune -f || true
+
+              # Pull the latest image and start containers
               docker compose up -d
             '''
           }
