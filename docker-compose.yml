@@ -1,6 +1,13 @@
 version: '3.8'
+
 services:
-  app:
-    image: ${DOCKERHUB_USR}/devops-writ1-app:latest
-    ports:
-      - "8080:8080"  # Adjust port as needed
+  college-carpark:
+    image: hiltonm420/collegecarpark:latest
+    container_name: college-carpark-app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./newvrn.csv:/app/newvrn.csv
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    restart: unless-stopped
