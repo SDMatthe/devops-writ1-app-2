@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  app:
+    image: ${DOCKERHUB_USR}/devops-writ1-app:latest
+    ports:
+      - "8080:8080"  # Adjust port as needed
